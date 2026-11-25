@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Енциклопедія Авіації України</title>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container">
+
+            <div class="logo"></div>
+
+            <nav aria-label="Головне меню">
+                <ul class="menu">
+                    <li><a href="#fighters">Винищувачі</a></li>
+                    <li><a href="#cas">Ударна авіація</a></li>
+                    <li><a href="#isr">Розвідувальні</a></li>
+                    <li><a href="#transport">Військово-транспортні</a></li>
+                    <li><a href="#rotor">Гелікоптери</a></li>
+                    <li><a href="#uav">БпЛА</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <section id="about">
+        <main class="container">
+            <p>
+                Українські повітряні сили пройшли через багато періодів, починаючи зі старих радянських "кукурудзників",
+                закінчуючи найновішими модифікаціями американських F-16. В цій збірці зображена сучасна авіація, яка
+                активно використовується ЗСУ сьогодні.
+            </p>
+    </section>
+
+    <!--поки що пошук не робочий-->
+    <form action="/search" method="get">
+        <label for="site-search" class="visually-hidden">Пошук моделей (поки що не робочий!!)</label>
+        <input type="search" id="site-search" name="q" placeholder="Введіть назву моделі літака..." required>
+        <button type="submit">Знайти</button>
+    </form>
+
+    <section class="aircraft-section" id="fighters">
+        <h2 class="category-title">Винищувачі</h2>
+        <div class="aircraft-grid" id="fightersGrid">
+            <p><a href="#" onclick="openPlane('f16f'); return false;">F-16 Fighting Falcon</a></p>
+            <p><a href="#" onclick="openPlane('mig29f'); return false;">МіГ-29</a></p>
+            <p><a href="#" onclick="openPlane('su27f'); return false;">Су-27</a></p>
+            <p><a href="#" onclick="openPlane('m2000f'); return false;">Dassault Mirage 2000</a></p>
+        </div>
+    </section>
+    <section class="aircraft-section" id="cas">
+        <h2 class="category-title">Ударна авіація</h2>
+        <div class="aircraft-grid" id="casGrid">
+            <p><a href="#" onclick="openPlane('su24c'); return false;">Су-24</a></p>
+            <p><a href="#" onclick="openPlane('su25c'); return false;">Су-25</a></p>
+        </div>
+    </section>
+    <section class="aircraft-section" id="isr">
+        <h2 class="category-title">Розвідувальні</h2>
+        <div class="aircraft-grid" id="isrGrid">
+            <p><a href="#" onclick="openPlane('asc890i'); return false;">ASC 890</a></p>
+            <p><a href="#" onclick="openPlane('an30i'); return false;">Ан-30</a></p>
+        </div>
+    </section>
+    <section class="aircraft-section" id="transport">
+        <h2 class="category-title">Військово-транспортні</h2>
+        <div class="aircraft-grid" id="cargoGrid">
+            <p><a href="#" onclick="openPlane('an70t'); return false;">Ан-70</a></p>
+            <p><a href="#" onclick="openPlane('an26t'); return false;">Ан-26</a></p>
+            <p><a href="#" onclick="openPlane('an24t'); return false;">Ан-24</a></p>
+            <p><a href="#" onclick="openPlane('g650t'); return false;">Gulfstream G650</a></p>
+        </div>
+    </section>
+    <section class="aircraft-section" id="rotor">
+        <h2 class="category-title">Гелікоптери</h2>
+        <div class="aircraft-grid" id="rotorGrid">
+            <p><a href="#" onclick="openPlane('mi8r'); return false;">Мі-8</a></p>
+        </div>
+    </section>
+    <section class="aircraft-section" id="uav">
+        <h2 class="category-title">БпЛА</h2>
+        <div class="aircraft-grid" id="uavGrid">
+            <p><a href="#" onclick="openPlane('tb2u'); return false;">Bayraktar TB2</a></p>
+        </div>
+    </section>
+
+    <div id="background"> <!-- шаблон модального вікна -->
+        <div id="window">
+            <h2 id="plname"></h2>
+            <p id="descrip"></p>
+            <img id="img" src="" alt="" style="width: 100%;">
+            <p>Характеристики:</p>
+            <div id="table-container"></div>
+            <button id='close-button' onclick="closePlane()">Закрити</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</html>
